@@ -1,3 +1,3 @@
 # iscordian.github.io
 
-*Do not copy*!
+*You can copy. but dont remove credits*!
