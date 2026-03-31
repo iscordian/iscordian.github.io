@@ -1,15 +1,223 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpg" href="/profile.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iscordian.dev</title>
-    <script type="module" crossorigin src="/script.js"></script>
-    <link rel="stylesheet" crossorigin href="/style.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Koushik Roy Portfolio - Student Developer">
+<title>Koushik Roy | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+
+/* Animated Background */
+body {
+  background: linear-gradient(-45deg,#020617,#0ea5e9,#020617,#1e293b);
+  background-size: 400% 400%;
+  animation: bg 10s ease infinite;
+}
+@keyframes bg {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Cursor Glow */
+#cursor {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(34,211,238,0.2), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  z-index: 0;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  inset:0;
+  background:#020617;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.loader-text {
+  color:#22d3ee;
+  font-size:2rem;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%,100%{opacity:.3}
+  50%{opacity:1}
+}
+
+/* Glow Name */
+.glow-name {
+  color:#22d3ee;
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow {
+  from{text-shadow:0 0 5px #22d3ee}
+  to{text-shadow:0 0 30px #22d3ee}
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg,#22d3ee,#60a5fa,#22d3ee);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: move 3s linear infinite;
+}
+@keyframes move {
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+/* Glass */
+.glass {
+  background: rgba(15,23,42,.6);
+  backdrop-filter: blur(10px);
+}
+
+/* Hamburger */
+.hamburger span {
+  display:block;
+  width:25px;
+  height:3px;
+  background:#22d3ee;
+  margin:5px 0;
+  transition:.4s;
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+.menu-item{opacity:0; transform:translateY(-10px)}
+.menu-item.show{opacity:1; transform:translateY(0); transition:.3s}
+
+</style>
+</head>
+
+<body class="text-white font-sans">
+
+<div id="cursor"></div>
+
+<!-- Loader -->
+<div id="loader"><div class="loader-text">Loading...</div></div>
+
+<!-- Navbar -->
+<header class="fixed w-full backdrop-blur z-50">
+<nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+<h1 class="text-xl font-bold glow-name">Koushik Roy</h1>
+
+<div class="space-x-8 hidden md:flex">
+<a href="#about" class="nav-link">About</a>
+<a href="#projects" class="nav-link">Projects</a>
+<a href="#contact" class="nav-link">Contact</a>
+</div>
+
+<div onclick="toggleMenu(this)" class="hamburger md:hidden cursor-pointer">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div id="mobileMenu" class="hidden flex flex-col items-center glass md:hidden">
+<a href="#about" class="menu-item py-3">About</a>
+<a href="#projects" class="menu-item py-3">Projects</a>
+<a href="#contact" class="menu-item py-3">Contact</a>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="h-screen flex flex-col justify-center items-center text-center">
+<h1 class="text-5xl md:text-7xl font-bold gradient-text"><span id="typing"></span></h1>
+<p class="mt-6">Building ideas with code & science</p>
+</section>
+
+<!-- About -->
+<section id="about" class="max-w-5xl mx-auto py-20 px-6 glass rounded-xl">
+<h2 class="text-3xl font-bold gradient-text">About Me</h2>
+<p class="mt-4">I am a student who loves programming, science, and creating projects.</p>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 px-6">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold gradient-text mb-10">Projects</h2>
+<div id="projectsContainer" class="grid md:grid-cols-3 gap-8"></div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 text-center glass rounded-xl mx-6">
+<h2 class="text-3xl font-bold gradient-text">Contact</h2>
+<p class="mt-4">Email: iscordian@gmail.com</p>
+<a href="https://github.com/iscordian" target="_blank">GitHub</a>
+<a href="https://discord.gg/KhaM9PEp6f" target="_blank">Discord</a>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 text-gray-400">
+  © 2026 Koushik Roy. All rights reserved.
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{
+document.getElementById('loader').style.display='none'
+})
+
+// Cursor glow
+document.addEventListener('mousemove',e=>{
+const c=document.getElementById('cursor')
+c.style.left=e.clientX+'px'
+c.style.top=e.clientY+'px'
+})
+
+// Menu
+function toggleMenu(btn){
+const menu=document.getElementById('mobileMenu')
+const items=document.querySelectorAll('.menu-item')
+btn.classList.toggle('active')
+menu.classList.toggle('hidden')
+items.forEach((item,i)=>{
+setTimeout(()=>item.classList.toggle('show'),i*100)
+})
+}
+
+// Typing
+const text="Hi, I'm Koushik";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById('typing').innerHTML+=text.charAt(i)
+i++
+setTimeout(type,70)
+}}
+type()
+
+// Scroll reveal
+ScrollReveal().reveal('section',{distance:'50px',duration:800,origin:'bottom'})
+
+// Projects
+const projects=[{name:"Calculator",description:"JS calculator",comingSoon:false}]
+function loadProjects(){
+const c=document.getElementById('projectsContainer')
+const v=projects.filter(p=>!p.comingSoon)
+if(v.length===0){c.innerHTML="Projects coming soon";return}
+v.forEach(p=>{
+const d=document.createElement('div')
+d.className="glass p-6 rounded-xl"
+d.innerHTML=`<h3 class='text-xl font-bold'>${p.name}</h3>`
+c.appendChild(d)
+})
+}
+loadProjects()
+</script>
+
+</body>
 </html>
