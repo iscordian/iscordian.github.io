@@ -84,7 +84,7 @@ async function loadPortfolioData() {
     const appContainer = document.getElementById('app');
     
     try {
-        const response = await fetch('info.json');
+        const response = await fetch('info.json', { cache: 'no-store' });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         
         const data = await response.json();
