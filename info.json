@@ -1,0 +1,26 @@
+{
+  "name": "Your Name",
+  "title": "Software, Hardware & Electronics Enthusiast",
+  "about": "A passionate hobbyist currently studying in Class 9 under the ASSEB board, specializing in circuit design, component testing, and legacy hardware modification. I enjoy bridging the gap between theoretical learning and hands-on electrical engineering.",
+  "projects": [
+    {
+      "name": "ZVS Induction Heater",
+      "description": "Designed and tested a custom Zero Voltage Switching (ZVS) induction heater circuit for high-efficiency metal heating.",
+      "tech_stack": ["Circuit Design", "Power Transistors"]
+    },
+    {
+      "name": "High-Density Extension Board",
+      "description": "Constructed a custom 23cm x 5.5cm DIY extension board designed to efficiently accommodate multiple mobile adapters.",
+      "tech_stack": ["Hardware Planning", "Wiring"]
+    },
+    {
+      "name": "SMPS Charger Modification",
+      "description": "Modified an older OB25132 Primary-Side Regulation controller circuit to adjust output voltage from 5V down to 4.2V for safe battery charging.",
+      "tech_stack": ["SMPS", "Component Testing"]
+    }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "github": "https://github.com/yourusername"
+  }
+}
