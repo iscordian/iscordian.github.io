@@ -4,10 +4,10 @@
   "about": "I am a Class 9 student under the ASSEB board with a deep passion for programming, electronics, and science.",
   "projects": [
     {
-      "name": "ZVS Induction Heater",
-      "description": "Designed and tested a custom Zero Voltage Switching (ZVS) induction heater circuit for high-efficiency metal heating.",
-      "tech_stack": ["Circuit Design", "Power Transistors"],
-      "link": "https://example.com"
+      "name": "QikShare",
+      "description": "Fast, serverless p2p file sharing app.",
+      "tech_stack": ["Serverless", "File Sharing"],
+      "link": "https://iscordian.is-a.dev/qikshare/"
     }
   ],
   "contact": {
