@@ -164,7 +164,7 @@ function generateLayout(data) {
         
         <!-- FOOTER -->
         <footer class="text-center text-white/40 text-sm pb-8 fade-up">
-            <p>Designed and built dynamically. &copy; ${new Date().getFullYear()} ${data.name}.</p>
+            <p>&copy; ${new Date().getFullYear()} ${data.name}.</p>
         </footer>
     `;
 }
