@@ -75,18 +75,6 @@
         </div>
     </div>
 
-    <!-- Dynamic Cache-Busting Script Loader -->
-    <script>
-        // 1. Create a new script element
-        const mainScript = document.createElement('script');
-        
-        // 2. Set the source with a unique timestamp to prevent caching
-        const uniqueVersion = new Date().getTime();
-        mainScript.src = 'script.js?v=' + uniqueVersion;
-        //mainScript.src = 'script.js?v=' + uniqueVersion;
-        
-        // 3. Inject it into the body of the HTML
-        document.body.appendChild(mainScript);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
