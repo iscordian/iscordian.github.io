@@ -71,11 +71,28 @@
         <!-- Initial Skeleton / Loader -->
         <div id="loading" class="flex flex-col items-center justify-center flex-grow">
             <div class="loader mb-6"></div>
-            <p class="text-white/60 animate-pulse tracking-widest text-sm uppercase">Initializing Terminal...</p>
+            <p class="text-white/60 animate-pulse tracking-widest text-sm uppercase">Loading Profile...</p>
         </div>
     </div>
 
-    <!-- Vanilla JS Script -->
-    <script src="script.js"></script>
+    <!-- Dynamic Cache-Busting Script Loader -->
+    <script>
+        // 1. Create a new script element
+        const mainScript = document.createElement('script');
+        
+        // 2. Set the source with a unique timestamp to prevent caching
+        const uniqueVersion = new Date().getTime();
+        mainScript.src = 'script.js?v=' + uniqueVersion;
+        //mainScript.src = 'script.js?v=' + uniqueVersion;
+        
+        // 3. Inject it into the body of the HTML
+        document.body.appendChild(mainScript);
+    </script>
+</body>
+</html>
+        
+        // 3. Inject it into the body of the HTML
+        document.body.appendChild(mainScript);
+    </script>
 </body>
 </html>
