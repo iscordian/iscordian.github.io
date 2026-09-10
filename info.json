@@ -1,7 +1,7 @@
 {
-  "name": "Your Name",
-  "title": "Software, Hardware & Electronics Enthusiast",
-  "about": "A passionate hobbyist currently studying in Class 9 under the ASSEB board, specializing in circuit design, component testing, and legacy hardware modification. I enjoy bridging the gap between theoretical learning and hands-on electrical engineering.",
+  "name": "KaushikRoy",
+  "title": "Software & Electronics Enthusiast",
+  "about": "I am a Class 9 student under the ASSEB board with a deep passion for programming, electronics, and science.",
   "projects": [
     {
       "name": "ZVS Induction Heater",
@@ -20,7 +20,7 @@
     }
   ],
   "contact": {
-    "email": "your.email@example.com",
-    "github": "https://github.com/yourusername"
+    "email": "iscordian.dev@gmail.com",
+    "github": "https://github.com/iscordian"
   }
 }
