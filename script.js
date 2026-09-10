@@ -137,7 +137,7 @@ function generateLayout(data) {
         <!-- PROJECTS SECTION -->
         <section class="mb-24">
             <h3 class="text-3xl font-bold mb-8 flex items-center gap-3 fade-up">
-                <span class="text-pink-400">02.</span> Projects & Logs
+                <span class="text-pink-400">02.</span> Projects
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 ${generateProjectsHTML(data.projects)}
