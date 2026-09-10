@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Kaushik Roy | Software & Electronics Enthusiast</title>
+    <meta name="title" content="Your Name | Software & Electronics Enthusiast">
+    <meta name="description" content="Portfolio of a passionate Class 9 ASSEB student specializing in software development, Node.js, and hands-on electronics projects.">
+    <meta name="keywords" content="Software Developer, Node.js, Electronics Hobbyist, ASSEB Student, Circuit Design, Web Development, Portfolio">
+    <meta name="author" content="Kaushik Roy">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp (Makes link previews look great) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iscordian.is-a.dev/">
+    <meta property="og:title" content="Your Name | Software & Electronics Enthusiast">
+    <meta property="og:description" content="Portfolio of a passionate Class 9 ASSEB student specializing in software development, Node.js, and hands-on electronics projects.">
+    <!-- Optional: Add a link to an image to show in the link preview -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iscordian.is-a.dev/">
+    <meta property="twitter:title" content="Kaushik Roy| Software & Electronics Enthusiast">
+    <meta property="twitter:description" content="Portfolio of a passionate Class 9 ASSEB student specializing in software development, Node.js, and hands-on electronics projects.">
+
+    <!-- Structured Data (JSON-LD) for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kaushik Roy",
+      "url": "https://iscordian.is-a.dev/",
+      "jobTitle": "Student & Hobbyist Developer",
+      "description": "A Class 9 student under the ASSEB board passionate about bridging the gap between programming and electronics.",
+      "knowsAbout": ["Node.js", "JavaScript", "Electronics", "Circuit Design"],
+      "sameAs": [
+        "https://github.com/iscordian"
+      ]
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Your existing CSS styles remain here -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
@@ -13,7 +51,7 @@
             margin: 0;
             overflow-x: hidden;
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e1b4b); /* Dark fallback background */
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
             color: white;
         }
 
@@ -52,7 +90,7 @@
         /* Loading Spinner */
         .loader {
             border: 3px solid rgba(255, 255, 255, 0.1);
-            border-left-color: #f472b6; /* Pink-400 */
+            border-left-color: #f472b6;
             border-radius: 50%;
             width: 48px;
             height: 48px;
@@ -61,6 +99,7 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
+
 <body class="antialiased min-h-screen relative selection:bg-pink-500 selection:text-white">
 
     <!-- Anime Style Animated Background -->
