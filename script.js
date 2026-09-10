@@ -150,7 +150,7 @@ function generateLayout(data) {
                 <span class="text-pink-400">03.</span> Connect
             </h3>
             <div class="glass-panel p-10 rounded-3xl inline-block w-full max-w-2xl mx-auto shadow-2xl">
-                <p class="text-white/70 mb-8 font-light">Interested in collaborating on hardware mods or circuit designs? Let's get in touch.</p>
+                <p class="text-white/70 mb-8 font-light">Interested in collaborating on hardware mods, science experiments, or software logic? Let's get in touch.</p>
                 <div class="flex justify-center gap-6 flex-wrap">
                     <a href="mailto:${data.contact.email}" class="px-8 py-3 rounded-full bg-pink-500/10 border border-pink-500/50 text-pink-300 hover:bg-pink-500 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)]">
                         Email Me
@@ -175,7 +175,7 @@ function generateProjectsHTML(projects) {
             <div class="col-span-1 md:col-span-2 glass-panel p-12 rounded-2xl text-center fade-up">
                 <div class="text-4xl mb-4">🚀</div>
                 <h4 class="text-2xl font-bold text-white/90 mb-2">Projects Coming Soon</h4>
-                <p class="text-white/60">I'm currently working on exciting hardware modifications. Check back later!</p>
+                <p class="text-white/60">I'm currently working on exciting hardware modifications and software builds. Check back later!</p>
             </div>
         `;
     }
@@ -185,14 +185,22 @@ function generateProjectsHTML(projects) {
         const tags = project.tech_stack.map(tech => 
             `<span class="px-3 py-1 text-xs font-semibold rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">${tech}</span>`
         ).join('');
+        
+        // Dynamically create a link button if the project has a URL
+        const linkButton = project.link ? 
+            `<a href="${project.link}" target="_blank" class="inline-flex items-center gap-2 mt-4 text-pink-400 hover:text-pink-300 font-semibold text-sm transition-colors group">
+                View Project 
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+            </a>` : '';
 
         return `
             <div class="glass-panel p-8 rounded-2xl fade-up transition-all duration-300 hover:-translate-y-2 hover:border-pink-400/50 hover:shadow-[0_10px_30px_rgba(244,114,182,0.1)] flex flex-col h-full" style="transition-delay: ${delay}ms;">
                 <h4 class="text-2xl font-bold mb-3 text-white">${project.name}</h4>
-                <p class="text-white/70 font-light mb-6 flex-grow leading-relaxed">
+                <p class="text-white/70 font-light mb-2 flex-grow leading-relaxed">
                     ${project.description}
                 </p>
-                <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/10">
+                ${linkButton}
+                <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-white/10">
                     ${tags}
                 </div>
             </div>
